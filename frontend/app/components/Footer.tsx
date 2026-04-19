@@ -1,19 +1,16 @@
 'use client';
 
 import Link from 'next/link';
-import { Github, Linkedin, Mail, Facebook, Twitter, Instagram, MessageCircle, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, Twitter, ExternalLink } from 'lucide-react';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     const socialLinks = [
-        { name: 'GitHub',     url: 'https://github.com/muneerdev',                                    icon: Github },
-        { name: 'LinkedIn',   url: 'https://www.linkedin.com/in/muneer-dev-57871b3b4/',               icon: Linkedin },
-        { name: 'Facebook',   url: 'https://www.facebook.com/people/Dev-Muneer/61585046272340/',      icon: Facebook },
-        { name: 'X',          url: 'https://x.com/DevMuneerAi',                                       icon: Twitter },
-        { name: 'Instagram',  url: 'https://www.instagram.com/muneerdev/',                            icon: Instagram },
-        { name: 'WhatsApp',   url: 'https://wa.me/923151304012',                                      icon: MessageCircle },
-        { name: 'Vercel',     url: 'https://vercel.com/muneerdev01-5476s-projects',                   icon: ExternalLink },
+        { name: 'GitHub',    url: 'https://github.com/muneerdev',                      icon: Github },
+        { name: 'LinkedIn',  url: 'https://www.linkedin.com/in/muneer-dev-57871b3b4/', icon: Linkedin },
+        { name: 'X',         url: 'https://x.com/DevMuneerAi',                         icon: Twitter },
+        { name: 'Vercel',    url: 'https://vercel.com/muneerdev01-5476s-projects',      icon: ExternalLink },
     ];
 
     return (
@@ -60,13 +57,13 @@ export default function Footer() {
                     <div>
                         <h4 className="font-semibold mb-4">Contact</h4>
                         <a
-                            href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+                            href="mailto:muneer.dev01@gmail.com"
                             className="flex items-center gap-2 text-gray-400 hover:text-primary transition-colors mb-2"
                         >
                             <Mail size={18} />
-                            {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
+                            muneer.dev01@gmail.com
                         </a>
-                        <p className="text-sm text-gray-500">Available for freelance & full-time roles</p>
+                        <p className="text-sm text-gray-500">{process.env.NEXT_PUBLIC_AVAILABILITY}</p>
                     </div>
                 </div>
 

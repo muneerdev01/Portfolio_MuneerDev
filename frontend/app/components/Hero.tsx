@@ -14,7 +14,7 @@ export default function Hero() {
             <div className="max-w-7xl mx-auto grid gap-12 items-center lg:grid-cols-[1.2fr_0.9fr]">
                 <div className="space-y-8">
                     <div >
-                        
+
                     </div>
 
                     <div className="space-y-4">
@@ -26,51 +26,54 @@ export default function Hero() {
                         <p className="text-base text-slate-300">Reducing clinical overhead through intelligent automation and precise web data extraction.</p>
                     </div>
 
-                    
+
 
                     <div className="flex flex-wrap gap-4">
-                        <button
-                            onClick={() => scrollToSection('contact')}
+                        <a
+                            href="#contact"
                             className="inline-flex items-center justify-center rounded-full bg-violet-500 px-8 py-3 text-sm font-semibold text-white transition hover:bg-violet-400"
                         >
                             Hire Me
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('projects')}
+                        </a>
+                        <a
+                            href="#projects"
                             className="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/70 px-8 py-3 text-sm font-semibold text-white transition hover:border-violet-500 hover:text-violet-200"
                         >
                             See Projects
-                        </button>
+                        </a>
                     </div>
 
-                    <div className="grid gap-4 sm:grid-cols-2">
-                        <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-                            <p className="text-xs uppercase tracking-[0.32em] text-slate-400">Email</p>
-                            <p className="mt-2 text-base font-semibold text-white">contact@muneerdev.com</p>
-                        </div>
-                        <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-                            <p className="text-xs uppercase tracking-[0.32em] text-slate-400">LinkedIn</p>
-                            <a
-                                href="https://www.linkedin.com/in/muneer-dev-57871b3b4/"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="mt-2 inline-block text-base font-semibold text-white hover:text-violet-200"
-                            >
-                                linkedin.com/in/muneer-dev-57871b3b4
-                            </a>
-                        </div>
-                    </div>
+                    {/* <div className="flex flex-wrap gap-4">
+                        <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@muneerdev.com"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-violet-500 hover:text-violet-200"
+                        >
+                            <Mail size={16} />
+                            contact@muneerdev.com
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/muneer-dev-57871b3b4/"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-violet-500 hover:text-violet-200"
+                        >
+                            <Linkedin size={16} />
+                            LinkedIn
+                        </a>
+                    </div> */}
 
                     <div className="flex flex-wrap items-center gap-3 text-slate-300">
                         <span className="text-sm uppercase tracking-[0.24em] text-slate-500">Connect</span>
                         {[
                             { href: 'https://github.com/muneerdev', icon: <Github size={18} /> },
                             { href: 'https://www.linkedin.com/in/muneer-dev-57871b3b4/', icon: <Linkedin size={18} /> },
-                            { href: 'https://www.facebook.com/people/Dev-Muneer/61585046272340/', icon: <Facebook size={18} /> },
+                            // { href: 'https://www.facebook.com/people/Dev-Muneer/61585046272340/', icon: <Facebook size={18} /> },
                             { href: 'https://x.com/DevMuneerAi', icon: <Twitter size={18} /> },
-                            { href: 'https://www.instagram.com/muneerdev/', icon: <Instagram size={18} /> },
+                            // { href: 'https://www.instagram.com/muneerdev/', icon: <Instagram size={18} /> },
                             { href: 'https://wa.me/923151304012', icon: <MessageCircle size={18} /> },
-                            { href: 'mailto:contact@muneerdev.com', icon: <Mail size={18} /> },
+                            { href: 'mailto:contact@muneer.dev01@gmail.com', icon: <Mail size={18} /> },
                         ].map((s, i) => (
                             <a key={i} href={s.href} target="_blank" rel="noreferrer"
                                 className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-slate-900/70 text-slate-200 transition hover:border-violet-500 hover:text-violet-200">

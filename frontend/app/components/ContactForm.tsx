@@ -175,14 +175,14 @@ export default function ContactForm() {
 
                 {/* Alternative Contact */}
                 <div className="mt-12 text-center border-t border-gray-700 pt-8">
-                    <p className="text-gray-400 mb-4">Or reach out directly:</p>
-                    <a
-                        href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+                    {/* <p className="text-gray-400 mb-4">Or reach out directly:</p> */}
+                    {/* <a
+                        // href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
                         className="inline-flex items-center gap-2 text-primary hover:text-blue-400 transition-colors text-lg"
                     >
                         <Mail size={24} />
                         {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
-                    </a>
+                    </a> */}
                 </div>
             </div>
         </section>
