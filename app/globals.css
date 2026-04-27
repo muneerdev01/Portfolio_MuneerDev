@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent-teal: #00d4aa;
+    --accent-blue: #6366f1;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #0a0e14;
+  }
+
+  body {
+    background-color: #0a0e14;
+    color: #e8eaed;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0e14;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #00d4aa55;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00d4aaaa;
+  }
+
+  /* Selection color */
+  ::selection {
+    background: #00d4aa33;
+    color: #e8eaed;
+  }
+}
+
+@layer components {
+  /* Glassmorphism card */
+  .glass {
+    background: rgba(18, 24, 32, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 212, 170, 0.12);
+  }
+
+  .glass-nav {
+    background: rgba(10, 14, 20, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 212, 170, 0.1);
+  }
+
+  /* Glow effects */
+  .glow-teal {
+    box-shadow: 0 0 20px rgba(0, 212, 170, 0.25), 0 0 60px rgba(0, 212, 170, 0.1);
+  }
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.25), 0 0 60px rgba(99, 102, 241, 0.1);
+  }
+
+  /* Gradient text */
+  .gradient-text-teal {
+    background: linear-gradient(135deg, #00d4aa, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Grid background pattern */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(0, 212, 170, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Bento card */
+  .bento-card {
+    @apply glass rounded-2xl p-6 transition-all duration-300 ease-out;
+    position: relative;
+    overflow: hidden;
+  }
+  .bento-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.04), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .bento-card:hover::before {
+    opacity: 1;
+  }
+  .bento-card:hover {
+    border-color: rgba(0, 212, 170, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 212, 170, 0.15);
+  }
+
+  /* Status badge */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-mono font-medium;
+  }
+
+  /* Tech chip */
+  .tech-chip {
+    @apply px-2.5 py-1 rounded-md text-xs font-code font-medium;
+    background: rgba(0, 212, 170, 0.08);
+    color: #00d4aa;
+    border: 1px solid rgba(0, 212, 170, 0.15);
+  }
+
+  /* Section label */
+  .section-label {
+    @apply font-mono text-xs tracking-widest uppercase;
+    color: #00d4aa;
+  }
+
+  /* Pulse dot */
+  .pulse-dot {
+    @apply w-2 h-2 rounded-full bg-safe;
+    animation: pulseDot 2s ease-in-out infinite;
+  }
+
+  /* Floating WhatsApp button */
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 rounded-full font-medium text-sm transition-all duration-300;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    box-shadow: 0 4px 24px rgba(37, 211, 102, 0.4);
+  }
+  .whatsapp-float:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+/* Recharts custom styles */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(0, 212, 170, 0.08) !important;
+}
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #121820 !important;
+  border: 1px solid rgba(0, 212, 170, 0.2) !important;
+  border-radius: 8px !important;
+  color: #e8eaed !important;
+}
