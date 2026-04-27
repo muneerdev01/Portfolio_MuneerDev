@@ -4,24 +4,33 @@ from fastapi import FastAPI, HTTPException, Depends, status
 from fastapi.middleware.cors import CORSMiddleware
 from bson import ObjectId
 from pydantic import BaseModel
+from mangum import Mangum  # Vercel کے لیے لازمی ہے
 
+# آپ کی اپنی فائلیں
 from database import get_db, close_db
 from models import Project
 
 app = FastAPI(title="MuneerDev Portfolio API", version="1.0.0")
 
+# CORS کی ترتیب
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "https://portfolio-muneer-dev.vercel.app",
+        "https://www.muneerdev.com",
+        "https://muneerdev.com"
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# یہ لائن Vercel (Serverless) کے لیے سب سے اہم ہے
+handler = Mangum(app)
 
 @app.on_event("shutdown")
 async def shutdown():
     await close_db()
-
 
 def serialize_doc(doc: dict) -> dict:
     if doc is None:
@@ -29,16 +38,19 @@ def serialize_doc(doc: dict) -> dict:
     doc["id"] = str(doc.pop("_id"))
     return doc
 
+# --- Routes ---
 
 @app.get("/")
 def root():
     return {"message": "Hello from MuneerDev API", "status": "online"}
 
+@app.get("/api/hello")
+def hello():
+    return {"message": "Hello from FastAPI on Vercel!"}
 
 @app.get("/health")
 def health():
     return {"status": "ok"}
-
 
 @app.get("/api/projects", response_model=List[Project])
 async def get_projects():
@@ -46,7 +58,6 @@ async def get_projects():
     cursor = db["projects"].find().sort("created_at", -1)
     projects = await cursor.to_list(length=100)
     return [Project(**{**serialize_doc(p), "created_at": p["created_at"]}) for p in projects]
-
 
 @app.post("/api/projects", response_model=Project, status_code=status.HTTP_201_CREATED)
 async def create_project(project: Project):
