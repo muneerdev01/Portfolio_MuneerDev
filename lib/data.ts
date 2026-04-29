@@ -55,4 +55,4 @@ export const ckdSummary = {
   highCritical:   555,
 };
 
-export const whatsappNumber = '923001234567'; // Replace with real number
+export const whatsappNumber = '923151304012'; 
