@@ -183,9 +183,8 @@ export default function Contact() {
               <p className="text-xs font-mono text-text-secondary uppercase tracking-widest">Domain Expertise</p>
               <div className="flex flex-wrap gap-2">
                 {[
-                  'Medical Dashboards', 'Geospatial Data', 'Clinical Analytics',
-                  'Healthcare APIs', 'Data Visualization', 'Pharmaceutical Tech',
-                  'Next.js', 'TypeScript', 'Recharts', 'Python'
+                  'Medical Dashboards', 'Clinical Analytics', 'Pharmaceutical Tech',
+                  'Healthcare APIs', 'Data Visualization', 'Next.js', 'Python', 'TypeScript', 'Recharts', 'MongoDB'
                 ].map(tag => (
                   <span key={tag} className="px-2.5 py-1 rounded-lg text-xs font-mono border border-surface-2 bg-surface/40 text-text-secondary hover:text-accent-teal hover:border-accent-teal/25 transition-colors cursor-default">
                     {tag}
