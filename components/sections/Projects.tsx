@@ -168,9 +168,9 @@ function QuantumCommandCard() {
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-2 text-xs text-text-secondary hover:text-text-primary hover:border-accent-teal/30 transition-all">
             <Github className="w-3.5 h-3.5" /> Code
           </a>
-          <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer"
+          <a href="https://calendly.com/muneer-dev01/30min" target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-accent-teal/10 border border-accent-teal/20 text-xs text-accent-teal hover:bg-accent-teal/20 transition-all">
-            <ExternalLink className="w-3.5 h-3.5" /> Live Demo
+            <ExternalLink className="w-3.5 h-3.5" /> Book Meeting
           </a>
         </div>
       </div>
@@ -302,10 +302,10 @@ function RenalMetricsCard() {
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-surface-2 text-xs text-text-secondary hover:text-text-primary hover:border-accent-blue/30 transition-all">
             <Github className="w-3.5 h-3.5" /> Code
           </a>
-          <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer"
+          <a href="https://calendly.com/muneer-dev01/30min" target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs border border-accent-blue/20 hover:bg-accent-blue/10 transition-all"
             style={{ color: '#6366f1', background: 'rgba(99,102,241,0.08)' }}>
-            <ExternalLink className="w-3.5 h-3.5" /> Live Demo
+            <ExternalLink className="w-3.5 h-3.5" /> Book Meeting
           </a>
         </div>
       </div>

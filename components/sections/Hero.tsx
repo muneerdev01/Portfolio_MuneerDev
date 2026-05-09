@@ -34,11 +34,11 @@ const socialLinks = [
     ),
   },
   {
-    label: 'Vercel',
-    href: 'https://vercel.com/',
+    label: 'Calendly',
+    href: 'https://calendly.com/muneer-dev01/30min',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-        <path d="M24 22.525H0l12-21.05 12 21.05z" />
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zm-5.5-6c.83 0 1.5-.67 1.5-1.5S14.33 9 13.5 9 12 9.67 12 10.5s.67 1.5 1.5 1.5zm5 0c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5.67 1.5 1.5 1.5zm-10 0c.83 0 1.5-.67 1.5-1.5S9.33 9 8.5 9 7 9.67 7 10.5 7.67 12 8.5 12z" />
       </svg>
     ),
   },
